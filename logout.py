@@ -39,7 +39,7 @@ def worker(task_id, token_info):
         if response.get('ok'):
             print(
                 f"[-] [{token}] [Task {task_id}] [Status: {response['ok']}] ..... Logging Out")
-            # response = logOut(token)
+            response = logOut(token)
             time.sleep(1200)
         else:
             print(
@@ -61,7 +61,7 @@ def main():
     # Config
     threads = []
     stop_event = threading.Event()
-    target_filename = 'target.json'  # Target token files
+    target_filename = 'target_logout.json'  # Target token files
     last_modified_time = None
  
     while True:
